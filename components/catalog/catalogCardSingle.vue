@@ -1,5 +1,5 @@
 <template>
-  <div class="cursor-pointer flex flex-col justify-between ">
+  <div class="cursor-pointer flex flex-col justify-between">
     <NuxtLink :to="`/catalog/${card.id}`">
       <div class="flex justify-around m-1">
         <p class="font-bold text-2xl text-neutral-700">

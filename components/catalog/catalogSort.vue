@@ -9,7 +9,7 @@
                 :key="index">{{ category }}
         </option>
       </select>
-      <input type="text" v-model="search" placeholder="название товара.." class="border p-1">
+      <input type="text" v-model="search" placeholder="название товара.." class="border p-1 ">
     </form>
   </div>
 </template>

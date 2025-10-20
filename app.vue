@@ -11,7 +11,7 @@
 </script>
 
 <style>
+* {
+  scroll-behavior: smooth
+}
 </style>
-
-<script setup lang="ts">
-</script>
