@@ -9,7 +9,7 @@
           <span class="material-icons p-1 bg-[#12777E] text-white cursor-pointer">add</span>
         </p>
       </div>
-      <div class="overflow-hidden rounded-[4px]">
+      <div class="rounded-[4px]">
         <NuxtImg :src="card.img" class="h-[450px] object-cover w-full mix-blend-multiply"/>
       </div>
       <div class="m-5">
