@@ -31,7 +31,7 @@
           <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-500 px-3 py-1.5 text-sm/6 font-semibold text-white hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 cursor-pointer">Войти</button>
         </div>
         <div class="text-sm text-center">
-          <NuxtLink to="/" class="font-semibold text-indigo-400 hover:text-indigo-300">Регистрация</NuxtLink>
+          <NuxtLink to="/auth/register" class="font-semibold text-indigo-400 hover:text-indigo-300">Регистрация</NuxtLink>
         </div>
       </form>
     </div>
