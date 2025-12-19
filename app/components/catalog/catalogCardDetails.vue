@@ -1,8 +1,8 @@
 <template>
   <div class="mt-5">
-    <h1 class="pt-4 sticky text-4xl font-bold border-b mb-5 pb-5 border-b-gray-300 theme-panels uppercase z-[999] top-15 select-text">
+    <h1 class="pt-4 sticky text-4xl font-bold border-b mb-5 pb-5 border-b-gray-300 theme-panels uppercase  top-15 select-text">
       {{ card.name }}</h1>
-    <div class="flex justify-around">
+    <div class="grid grid-cols-2">
       <div class="self-start sticky top-20 z-999 scale-x-75 scale-y-75">
         <NuxtImg :src="card.img" :alt="card.name" class="rounded-2xl max-w-130"/>
       </div>

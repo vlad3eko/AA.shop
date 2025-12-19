@@ -1,5 +1,5 @@
 <template>
-  <div class="flex overflow-hidden overflow-y-scroll h-full relative theme-background z-999  overflow-x-scroll">
+  <div class="flex overflow-hidden h-full relative theme-background overflow-x-scroll">
       <div v-for="scroll in cards" class="mb-5 mr-5 first:mt-5 last:mb-5 self-end">
         <NuxtLink :to="`/catalog/${scroll.id}`">
           <div class="w-[250px]">
