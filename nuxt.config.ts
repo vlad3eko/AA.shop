@@ -1,8 +1,7 @@
-
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/image', '@nuxt/icon', 'shadcn-nuxt', '@nuxtjs/tailwindcss'],
+  modules: ['@nuxt/image', '@nuxt/icon', 'shadcn-nuxt', '@nuxtjs/tailwindcss', 'nuxt-swiper'],
         app: {
             head: {
                 title: 'New',
@@ -27,5 +26,10 @@ export default defineNuxtConfig({
     shadcn: {
         prefix: 'V',
         componentDir: '@/components/ui'
+    },
+    vue: {
+        compilerOptions: {
+            isCustomElement: (tag) => tag.startsWith('swiper-'),
+        },
     },
 })

@@ -17,6 +17,7 @@
     "clsx": "^2.1.1",
     "lucide-vue-next": "^0.562.0",
     "nuxt": "^4.2.2",
+    "nuxt-swiper": "^2.0.1",
     "reka-ui": "^2.6.1",
     "sass-embedded": "^1.97.0",
     "shadcn-nuxt": "^2.4.3",
