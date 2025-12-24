@@ -21,4 +21,5 @@ export interface ICard {
     img: string
     category: string
     info: ICardDescription[]
+    presentation: ICardDescription[]
 }
