@@ -16,7 +16,7 @@
         <p class="font-bold border-b border-b-gray-300 pb-2">
           {{ props.card.name }}
         </p>
-        <span v-for="cardInfoTitle in props.card.info[0].data" class="text-[#707070]">
+        <span v-for="cardInfoTitle in props.card?.info[0]?.data" class="text-[#707070]">
             {{ cardInfoTitle?.title }}
           </span>
       </div>
