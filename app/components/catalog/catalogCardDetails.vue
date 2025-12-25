@@ -6,28 +6,21 @@
       <div class="self-start sticky top-20 z-999 scale-x-75 scale-y-75">
         <NuxtImg :src="props.card.img" :alt="props.card.name"/>
       </div>
-      <div class="text-left pb-20 w-5xl">
-        <span
-            class="text-[#c4c4c4] block text-3xl text-center uppercase border-b pb-5 mt-5 cursor-pointer">Стоимость: </span>
-        <p class="font-bold text-center mb-5 mt-5 tracking-widest text-4xl">{{ props.card.price }} ₽</p>
-        <div @click="showDescription = !showDescription" class="relative">
-          <span
-              class="text-[#c4c4c4] block text-3xl text-center uppercase border-b pb-5 mt-5 cursor-pointer">Описание</span>
-          <div class="absolute top-3 right-0">
-            <span v-if="!showDescription" class="material-symbols-outlined theme-text">visibility_off</span>
-            <span v-else class="material-symbols-outlined theme-text">visibility</span>
-          </div>
-        </div>
 
-        <div v-if="showDescription">
-          <div v-for="infoCard in props.card.info">
+      <div class="text-left">
+
+        <ui-toggle-section title="Стоимость" v-model:is-unabled="toggleSectionEnabled">
+          <p class="font-bold text-center mb-5 mt-5 tracking-widest text-4xl">{{ props.card.price }} ₽</p>
+        </ui-toggle-section>
+
+        <ui-toggle-section title="Описание">
+          <div v-for="infoCard in props.card.info" class="mb-5">
             <p
-                class="text-3xl font-bold text-center mb-5 mt-5 theme-titles rounded-2xl uppercase"
-                ref="descrTitle">
+                class="text-3xl font-bold text-center mb-5 theme-titles rounded-2xl uppercase">
               {{ infoCard.title }} </p>
-            <div v-for="infoCardData in infoCard.data">
+            <div v-for="infoCardData in infoCard.data" class="mb-2">
               <p
-                  class="text-1xl inline font-bold">
+                  class="inline font-bold">
                 {{ infoCardData.title }}
               </p>
               <span>
@@ -35,41 +28,31 @@
             </span>
             </div>
           </div>
-        </div>
+        </ui-toggle-section>
 
-        <div class="relative">
-          <span @click="showPresentation = !showPresentation"
-                class="text-[#c4c4c4] block text-3xl text-center uppercase border-b pb-5 mt-5 cursor-pointer">
-            Презентация
-          </span>
-          <div class="absolute top-3 right-0">
-            <span v-if="!showPresentation" class="material-symbols-outlined theme-text">visibility_off</span>
-            <span v-else class="material-symbols-outlined theme-text">visibility</span>
-          </div>
-        </div>
-
-          <div v-show="showPresentation" class="mt-5">
-            <div v-for="present in props.card.presentation">
-              <div v-for="presentData in present.data">
-                <div v-if="presentData.title">
-                  <div class="flex">
-                    <p class="bg-yellow-500 pr-5 mr-2 rounded-3xl border border-white"></p>
-                    <span class="text-1xl ">
+        <ui-toggle-section title="Презентация">
+          <div v-for="present in props.card.presentation">
+            <div v-for="presentData in present.data">
+              <div v-if="presentData.title">
+                <div class="flex">
+                  <p class="bg-yellow-500 pr-5 mr-2 rounded-3xl border border-white"></p>
+                  <span class="text-1xl ">
                     <i>{{ presentData.title }}</i>
                   </span>
-                  </div>
-                  <div class="text-2xl my-5 flex">
-                    <p class="bg-green-500 pr-5 mr-2 rounded-3xl border border-white"></p>
-                    <span>
+                </div>
+                <div class="text-2xl my-5 flex">
+                  <p class="bg-green-500 pr-5 mr-2 rounded-3xl border border-white"></p>
+                  <span>
                     {{ presentData.description }}</span>
-                  </div>
                 </div>
-                <div v-else>
-                  <span>В разработке...</span>
-                </div>
+              </div>
+              <div v-else>
+                <span>В разработке...</span>
               </div>
             </div>
           </div>
+        </ui-toggle-section>
+
       </div>
     </div>
   </div>
@@ -77,10 +60,14 @@
 
 <script lang="ts" setup>
 
+import UiToggleSection from "~/components/ui/UiToggleSection.vue";
+import {MATERIAL_ICON_CLASS_COLOR_TEXT} from "~~/server/utils/classes/classes.shortcut";
+
 const props = defineProps<{
   card: ICard
 }>()
 
+const toggleSectionEnabled = ref<boolean>(false)
 const showDescription = ref<boolean>(true)
 const showPresentation = ref<boolean>(true)
 
