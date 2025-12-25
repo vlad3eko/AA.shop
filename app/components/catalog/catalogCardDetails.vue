@@ -9,11 +9,11 @@
 
       <div class="text-left">
 
-        <ui-toggle-section title="Стоимость" v-model:is-unabled="toggleSectionEnabled">
+        <toggle-section title="Стоимость" v-model:is-unabled="toggleSectionEnabled">
           <p class="font-bold text-center mb-5 mt-5 tracking-widest text-4xl">{{ props.card.price }} ₽</p>
-        </ui-toggle-section>
+        </toggle-section>
 
-        <ui-toggle-section title="Описание">
+        <toggle-section title="Описание">
           <div v-for="infoCard in props.card.info" class="mb-5">
             <p
                 class="text-3xl font-bold text-center mb-5 theme-titles rounded-2xl uppercase">
@@ -28,9 +28,9 @@
             </span>
             </div>
           </div>
-        </ui-toggle-section>
+        </toggle-section>
 
-        <ui-toggle-section title="Презентация">
+        <toggle-section title="Презентация">
           <div v-for="present in props.card.presentation">
             <div v-for="presentData in present.data">
               <div v-if="presentData.title">
@@ -51,25 +51,23 @@
               </div>
             </div>
           </div>
-        </ui-toggle-section>
+        </toggle-section>
 
       </div>
+
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 
-import UiToggleSection from "~/components/ui/UiToggleSection.vue";
-import {MATERIAL_ICON_CLASS_COLOR_TEXT} from "~~/server/utils/classes/classes.shortcut";
+import ToggleSection from "~/components/ui/ToggleSection.vue";
 
 const props = defineProps<{
   card: ICard
 }>()
 
 const toggleSectionEnabled = ref<boolean>(false)
-const showDescription = ref<boolean>(true)
-const showPresentation = ref<boolean>(true)
 
 </script>
 
