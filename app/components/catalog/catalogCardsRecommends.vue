@@ -1,5 +1,5 @@
 <template>
-  <h2 class="text-2xl text-left border-b-gray-700 pb-5">Так-же выбирают</h2>
+  <h2 class="text-2xl text-left border-b border-b-gray-700 w-max pb-5 mb-5">Так-же выбирают</h2>
   <div class="flex items-center gap-5">
 
     <button @click="swiper.prev()">
@@ -9,11 +9,9 @@
 
     <ClientOnly>
       <swiper-container ref="swiperRef" :init="false" :slides-per-view="6" class="flex overflow-hidden relative">
-        <swiper-slide v-for="recommendCard in cards" :key="recommendCard.id" class="mr-10 self-end">
+        <swiper-slide v-for="recommendCard in cards" :key="recommendCard.id" class="mr-10">
           <NuxtLink :to="`/catalog/${recommendCard.id}`">
-            <div class="w-[250px]">
-              <NuxtImg :src="recommendCard.img"
-                       class="max-h-[250px] mx-auto object-cover z-[999]"/>
+            <div class="max-w-[250px] h-[320px] flex flex-col justify-between">
               <div class="theme-price font-bold text-2xl mb-2 block">
                 <span v-if="!isRange(recommendCard.price)">
                   {{ recommendCard.price }}
@@ -23,7 +21,9 @@
                 </span>
                 ₽
               </div>
-              <span class="block theme-titles rounded-2xl uppercase border-b">
+              <NuxtImg :src="recommendCard.img"
+                       class="max-h-[250px] mx-auto"/>
+              <span class="rounded-2xl uppercase">
               {{ recommendCard.name }}</span>
             </div>
           </NuxtLink>
