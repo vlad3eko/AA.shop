@@ -1,5 +1,5 @@
 <template>
-  <div class="p-2 flex items-center ">
+  <div class="pt-2 pb-2 flex items-center">
     <div v-for="card in cards" :key="card.id">
     </div>
     <form class="border border-black rounded-2xl relative">

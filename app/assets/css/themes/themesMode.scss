@@ -1,175 +1,128 @@
-@use "themeVariables" as *;
+@import "black";
+@import "root";
 
-.themeDark {
-  background: #191B1C;
-  color: #707070;
+:root {
+  --bg-main: #F2F2F7;
+  --bg-panel: #DEDEE5;
+  --bg-elevated: #E6E6ED;
 
-  & .theme-background {
-    background: #191B1C;
+  /* Accent */
+  --accent-main: #4FB6A1;
+  --accent-muted: #3E8F80;
+  --accent-active: #63D1BB;
+
+  /* Text */
+  --text-primary: #303030;
+  --text-muted: #B5B5B5;
+  --text-secondary: #8A8A8A;
+
+  /* BORDER */
+  --border-primary: rgba(209 213 219 / var(--tw-border-opacity, 1));
+}
+
+body._dark {
+
+}
+
+/**/
+
+
+@mixin theme {
+  background: var(--bg-main);
+
+  .theme-panels {
+    background: var(--bg-panel);
   }
 
-  & .theme-panels {
-    background: #252829;
+  .theme-text {
+    color: var(--text-primary);
   }
 
-  & .theme-text {
-    color: rgba(255, 255, 255, 0.3);
+  .theme-price {
+    color: var(--accent-main);
   }
 
-  & .theme-price {
-    color: $price;
-  }
-
-  & .theme-menu {
-    color: white;
+  .theme-menu {
+    background: var(--bg-main);
     text-transform: uppercase;
     font-weight: bold;
     font-size: 24px;
-    letter-spacing: 2px;
+    letter-spacing: 5px;
   }
 
-  & .theme-titles {
-    background: #252829;
-    color: #707070;
+  .theme-titles {
+    background: var(--bg-elevated);
+    color: var(--text-secondary);
   }
 
-  & .theme-subTitles {
+  .theme-subTitles {
 
   }
 
-  & .theme-card {
-    background: #252829;
+  .theme-card {
+    background: var(--bg-panel);
+
     &:hover {
-      background: #ececec;
+      background: var(--bg-elevated);
     }
   }
 
-  & .theme-hover {
+  .theme-hover {
 
   }
 
-  & .theme-border {
+  .theme-border {
+    border: 1px solid var(--border-primary);
+  }
+
+  .theme-border-b {
+    border-bottom: 1px solid var(--border-primary);
+  }
+
+  .theme-border-r {
+    border-right: 1px solid rgba(209 213 219 / var(--tw-border-opacity, 1));
 
   }
 
-  & .theme-descriptions {
+  .theme-border-l {
+    border-left: 1px solid rgba(209 213 219 / var(--tw-border-opacity, 1));
+
+  }
+
+  .theme-border-t {
+    border-bottom: 1px solid rgba(209 213 219 / var(--tw-border-opacity, 1));
+
+  }
+
+  .theme-descriptions {
 
   }
 }
 
 .themeLight {
-  background: oklch(92.8% 0.006 264.531);
-
-  & .theme-background {
-    background: oklch(21% .034 264.665);
-  }
-
-  & .theme-panels {
-    background: oklch(92.8% 0.006 264.531);
-  }
-
-  & .theme-text {
-    color: black;
-  }
-
-  & .theme-price {
-    color: $price;
-  }
-
-  & .theme-menu {
-    color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 24px;
-    letter-spacing: 2px;
-  }
-
-  & .theme-titles {
-    background: oklch(87.9% 0.169 91.605);
-  }
-
-  & .theme-subTitles {
-
-  }
-
-  & .theme-card {
-    background: white;
-    &:hover {
-      background: #ececec;
-    }
-  }
-
-  & .theme-hover {
-
-  }
-
-  & .theme-border {
-
-  }
-
-  & .theme-descriptions {
-
-  }
+  color: var(--text-primary);
+  @include theme;
 }
 
-@mixin theme-background {
+.themeDark {
+  /* Surface */
+  --bg-main: #212121;
+  --bg-panel: #262626;
+  --bg-elevated: #2C2C2C;
 
-}
+  /* Accent */
+  --accent-main: #4FB6A1;
+  --accent-muted: #3E8F80;
+  --accent-active: #63D1BB;
 
-@mixin theme-panels {
+  /* Text */
+  --text-primary: #E6E6E6;
+  --text-secondary: #B5B5B5;
+  --text-muted: #8A8A8A;
 
-}
+  /* Derived */
+  --border-primary: rgba(209 213 219 / var(--tw-border-opacity, 1));
+  --shadow-soft: 0 4px 12px rgba(0, 0, 0, .35);
 
-@mixin theme-text {
-
-}
-
-@mixin theme-titles {
-
-}
-
-@mixin theme-subTitles {
-
-}
-
-@mixin theme-card {
-
-}
-
-@mixin theme-hover {
-
-}
-
-@mixin theme-border {
-
-}
-
-@mixin theme-descriptions {
-
-}
-
-@mixin themeDark {
-  background: chocolate;
-  @include theme-background;
-  @include theme-panels;
-  @include theme-text;
-  @include theme-titles;
-  @include theme-subTitles;
-  @include theme-card;
-  @include theme-hover;
-  @include theme-border;
-  @include theme-descriptions;
-}
-
-@mixin themeLight {
-  $textColor: white;
-  @include theme-background;
-  @include theme-panels;
-  @include theme-text;
-  @include theme-titles;
-  @include theme-subTitles;
-  @include theme-card;
-  @include theme-hover;
-  @include theme-border;
-  @include theme-descriptions;
+  @include theme
 }

@@ -1,6 +1,5 @@
 <template>
-  <div class="theme-menu p-2">
-    <div class="max-w-96 mx-auto container">
+    <div class="max-w-96 mx-auto container p-2">
       <nav>
         <div class="flex">
           <ul v-for="listMenu in menu" class="ml-10 first:ml-0 relative " :key="listMenu.id">
@@ -31,7 +30,6 @@
         </div>
       </nav>
     </div>
-  </div>
 </template>
 
 <script setup>

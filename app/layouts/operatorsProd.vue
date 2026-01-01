@@ -1,19 +1,20 @@
 <template>
-  <main class="bg-gray-200 h-full relative themeLight" ref="changeTheme">
+  <main class="h-full relative themeLight" ref="changeTheme">
     <div class="text-center">
-      <div class="mr-20">
+      <div class="theme-background">
         <div class="container mx-auto min-h-[100vh]">
-          <div class="sticky top-0 z-10 theme-background w-full p-1 rounded-2xl">
-            <div class="flex justify-between ">
+          <div class="sticky top-0 z-10 w-full rounded-2xl">
+            <div class="flex justify-between theme-menu">
               <Menu class="mx-auto"/>
 
+              <!-- TODO create component changeTheme add logic swap at hook             -->
               <div @click="setTheme" class="justify-self-end">
                 <span v-if="themeChanged"
                       :class="MATERIAL_ICON_CLASS"
-                      class="cursor-pointer md-48">brightness_7</span>
+                      class="cursor-pointer md-48 theme-text">brightness_7</span>
                 <span v-else
                       :class="MATERIAL_ICON_CLASS"
-                      class="cursor-pointer md-48">prayer_times</span>
+                      class="cursor-pointer md-48 theme-text">prayer_times</span>
               </div>
             </div>
           </div>
@@ -43,6 +44,6 @@ const setTheme = () => {
 </script>
 
 <style lang="scss">
-@use "assets/css/themes/themesMode.scss";
+@use "~/assets/css/themes/themesMode.scss";
 
 </style>

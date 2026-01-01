@@ -1,5 +1,5 @@
 <template>
-  <h2 class="text-2xl text-left border-b border-b-gray-700 w-max pb-5 mb-5">Так-же выбирают</h2>
+  <h2 class="text-2xl text-left theme-border-b w-max pb-5 mb-5">Так-же выбирают</h2>
   <div class="flex items-center gap-5">
 
     <button @click="swiper.prev()">
