@@ -1,20 +1,21 @@
 <template>
-  <main class="h-full relative themeLight" ref="changeTheme">
+  <main class="h-full relative">
     <div class="text-center">
       <div class="theme-background">
         <div class="container mx-auto min-h-[100vh]">
           <div class="sticky top-0 z-10 w-full rounded-2xl">
-            <div class="flex justify-between theme-menu">
-              <Menu class="mx-auto"/>
+            <div class="flex justify-between uppercase font-bold text-3xl bg-panel">
+              <Menu/>
 
-              <!-- TODO create component changeTheme add logic swap at hook             -->
+              <!-- TODO create component changeTheme add logic swap at hook -->
               <div @click="setTheme" class="justify-self-end">
                 <span v-if="themeChanged"
                       :class="MATERIAL_ICON_CLASS"
-                      class="cursor-pointer md-48 theme-text">brightness_7</span>
+                      class="cursor-pointer md-48 text-primary">brightness_7</span>
+                <!--TODO create swap logo theme -->
                 <span v-else
                       :class="MATERIAL_ICON_CLASS"
-                      class="cursor-pointer md-48 theme-text">prayer_times</span>
+                      class="cursor-pointer md-48 text-primary">prayer_times</span>
               </div>
             </div>
           </div>
@@ -25,21 +26,16 @@
       </div>
     </div>
   </main>
-  <footer-component :class="themeChanged ? 'themeLight' : 'themeDark' "/>
+  <footer-component :class="themeChanged ? 'light' : 'dark' "/>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 
-import {MATERIAL_ICON_CLASS} from "~~/server/utils/classes/classes.shortcut.js";
+import {MATERIAL_ICON_CLASS} from "~~/server/utils/classes/material-icon.shortcut.js";
+import {setTheme} from "~~/server/utils/hooks/select.theme";
 
-const changeTheme = ref()
-const themeChanged = ref(true)
+const themeChanged = ref<boolean>(true)
 
-const setTheme = () => {
-  changeTheme.value.classList.toggle(['themeLight'])
-  changeTheme.value.classList.toggle(['themeDark'])
-  themeChanged.value = !themeChanged.value
-}
 
 </script>
 

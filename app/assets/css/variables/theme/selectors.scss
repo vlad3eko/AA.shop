@@ -1,0 +1,13 @@
+body {
+  background: var(--bg-main);
+  color: var(--text-primary);
+}
+
+.card {
+  background: var(--bg-panel);
+  &:hover { background: var(--bg-elevated); }
+}
+
+.router-link-active, .router-link-exact-active {
+  color: var(--accent-active);
+}

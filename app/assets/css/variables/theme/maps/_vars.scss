@@ -1,0 +1,45 @@
+$text-color-roles: (
+        text: (
+                primary: --text-primary,
+                secondary: --text-secondary,
+                muted: --text-muted,
+                accent: --accent-main
+        ),
+        accent: (
+                main: --accent-main,
+                active: --accent-active,
+                muted: --accent-muted,
+        ),
+        price: (
+                main: --accent-main,
+                active: --accent-active,
+                muted: --accent-muted,
+        ),
+        title: (
+                main: --text-primary,
+                secondary: --text-secondary
+        ),
+);
+
+$bg-color-roles: (
+        bg: (
+                main: --bg-main,
+                panel: --bg-panel,
+                elevated: --bg-elevated,
+        ),
+);
+
+$border-color-roles: (
+        border: (
+                top: --border-primary,
+                bottom: --border-primary,
+                left: --border-primary,
+                right: --border-primary,
+        ),
+        border-muted: (
+                top: --border-muted,
+                bottom: --border-muted,
+                left: --border-muted,
+                right: --border-muted,
+        )
+)

@@ -2,7 +2,7 @@
     <div class="max-w-96 mx-auto container p-2">
       <nav>
         <div class="flex">
-          <ul v-for="listMenu in menu" class="ml-10 first:ml-0 relative " :key="listMenu.id">
+          <ul v-for="listMenu in menu" class="ml-10 first:ml-0 relative" :key="listMenu.id">
             <div v-on-click-outside="hideMenu">
               <li class="w-max ml-10 first:ml-0">
                 <NuxtLink :to="listMenu.link" @click.prevent="showMenuList(listMenu.id)"
@@ -51,7 +51,5 @@ const hideMenu = () => {
 </script>
 
 <style scoped>
-.router-link-active, .router-link-exact-active {
-  color: #12b488;
-}
+
 </style>
