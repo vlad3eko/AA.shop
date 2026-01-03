@@ -1,7 +1,7 @@
 <template>
   <div class="cursor-pointer flex flex-col justify-between">
     <NuxtLink :to="`/catalog/${props.card.id}`">
-        <div class="theme-price flex justify-center m-1 mb-5 font-bold text-2xl text-neutral-700">
+        <div class="price-main flex justify-center m-1 mb-5 font-bold text-2xl text-neutral-700">
           <span v-if="!isRange(props.card.price)">
                   {{ props.card.price }}
                 </span>
@@ -14,10 +14,10 @@
         <NuxtImg :src="props.card.img" class="h-[350px] object-cover mx-auto"/>
       </div>
       <div class="m-5">
-        <p class="font-bold border-b border-b-gray-300 pb-2">
+        <p class="font-bold border-muted-bottom pb-2 mb-2 rounded text-primary">
           {{ props.card.name }}
         </p>
-        <span v-for="cardInfoTitle in props.card?.info[0]?.data" class="text-[#707070]">
+        <span v-for="cardInfoTitle in props.card?.info[0]?.data" class="text-secondary">
             {{ cardInfoTitle?.title }}
           </span>
       </div>

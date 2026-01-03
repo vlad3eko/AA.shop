@@ -15,7 +15,7 @@
 <script setup>
 
 
-import {MATERIAL_ICON_CLASS_COLOR_TEXT} from "~~/server/utils/classes/classes.shortcut.js";
+import {MATERIAL_ICON_CLASS_COLOR_TEXT} from "~~/server/utils/classes/material-icon.shortcut.ts";
 
 definePageMeta({
   layout: 'operators-prod',

@@ -4,10 +4,10 @@
     <div v-if="model">
         <span @click="toggle"
               :class="styleClasses">
-          {{ title }}
+          {{ props.title }}
         </span>
       <div v-show="model"
-           class="absolute top-3 right-0 cursor-pointer">
+           class="absolute top-4 right-0 cursor-pointer">
         <span v-if="!isOpen"
               :class="MATERIAL_ICON_CLASS_COLOR_TEXT">visibility_off
         </span>
@@ -25,7 +25,7 @@
 
     <div v-else>
         <span :class="styleClasses">
-          {{ title }}
+          {{ props.title }}
         </span>
 
         <slot/>
@@ -37,7 +37,7 @@
 <script lang="ts" setup>
 
 
-import {MATERIAL_ICON_CLASS_COLOR_TEXT} from "~~/server/utils/classes/classes.shortcut";
+import {MATERIAL_ICON_CLASS_COLOR_TEXT} from "~~/server/utils/classes/material-icon.shortcut";
 
 const props = withDefaults(defineProps<{
   title: string
@@ -57,11 +57,11 @@ const toggle = () => {
 }
 
 const styleClasses = computed(() => {
-  const classicTitle = 'text-[#c4c4c4] block text-3xl text-center uppercase border-b pb-5 mt-5 mb-5'
+  const classicTitle = 'title-main font-bold block text-3xl text-center uppercase py-2 my-5'
   if (!model.value) {
     return classicTitle
   } else {
-    return classicTitle + ' cursor-pointer'
+    return classicTitle + ' cursor-pointer bg-panel'
   }
 })
 
