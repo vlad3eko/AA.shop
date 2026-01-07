@@ -9,17 +9,14 @@
               <Menu/>
 
               <!-- TODO create component changeTheme add logic swap at hook -->
-                <span v-if="themeChanged"
-                      :class="MATERIAL_ICON_CLASS_COLOR_TEXT"
-                      class="cursor-pointer md-48 ">brightness_7</span>
-                <!--TODO create swap logo theme -->
-                <span v-else
-                      :class="MATERIAL_ICON_CLASS_COLOR_TEXT"
-                      class="cursor-pointer md-48 ">prayer_times</span>
-              <select v-model="$colorMode.preference" class="text-accent-foreground bg-background">
-                <option value="light">Light</option>
-                <option value="dark">Dark</option>
-              </select>
+              <span v-if="themeChanged"
+                    :class="MATERIAL_ICON_CLASS_COLOR_TEXT"
+                    class="cursor-pointer md-48 ">brightness_7</span>
+              <!--TODO create swap logo theme -->
+              <span v-else
+                    :class="MATERIAL_ICON_CLASS_COLOR_TEXT"
+                    class="cursor-pointer md-48 ">prayer_times</span>
+              <change-theme/>
             </div>
           </div>
           <div>
@@ -37,6 +34,7 @@
 <script lang="ts" setup>
 
 import {MATERIAL_ICON_CLASS_COLOR_TEXT} from "~~/server/utils/classes/material-icon.shortcut.js";
+import ChangeTheme from "~/components/ui/ChangeTheme.vue";
 
 const themeChanged = ref<boolean>(true)
 

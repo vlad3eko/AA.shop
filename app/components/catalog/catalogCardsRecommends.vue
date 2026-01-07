@@ -1,6 +1,6 @@
 <template>
-    <h2 class="text-2xl w-max mb-5">Так-же выбирают:</h2>
-  <div class="flex items-center gap-5">
+    <h2 class="text-2xl w-max mb-5 px-5">Так-же выбирают:</h2>
+  <div class="flex items-center gap-5 px-5">
 
     <button @click="swiper.prev()">
       <span :class="MATERIAL_ICON_CLASS_COLOR_TEXT"
@@ -8,11 +8,11 @@
     </button>
 
     <ClientOnly>
-      <swiper-container ref="swiperRef" :init="false" :slides-per-view="6" class="flex overflow-hidden relative">
+      <swiper-container ref="swiperRef" :init="false" :slides-per-view="5" class="overflow-hidden relative ">
         <swiper-slide v-for="recommendCard in cards" :key="recommendCard.id" class="mr-10">
           <NuxtLink :to="`/catalog/${recommendCard.id}`">
             <div class="max-w-[250px] h-[320px] flex flex-col justify-between">
-              <div class="text-price font-bold text-2xl mb-2 block">
+              <div class="text-price font-bold xl:text-2xl mb-2 block">
                 <span v-if="!isRange(recommendCard.price)">
                   {{ recommendCard.price }}
                 </span>

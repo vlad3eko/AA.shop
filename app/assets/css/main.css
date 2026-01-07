@@ -1,4 +1,5 @@
 @import "../css/variables/theme/theme.css";
+@import "../css/variables/transition";
 @import "tailwindcss";
 
 
@@ -16,5 +17,6 @@
 /* Rules for using icons as white on a dark background. */
 .material-symbols-outlined { color: rgba(255, 255, 255, 1); }
 .material-symbols-outlined.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
 
 
