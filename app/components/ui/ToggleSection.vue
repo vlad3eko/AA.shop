@@ -27,7 +27,6 @@
         <span :class="styleClasses">
           {{ props.title }}
         </span>
-
         <slot/>
 
     </div>
