@@ -11,7 +11,7 @@
               <!-- TODO create component changeTheme add logic swap at hook -->
               <span v-if="themeChanged"
                     :class="MATERIAL_ICON_CLASS_COLOR_TEXT"
-                    class="cursor-pointer md-48 ">brightness_7</span>
+                    class="cursor-pointer md-48 ">contrast</span>
               <!--TODO create swap logo theme -->
               <span v-else
                     :class="MATERIAL_ICON_CLASS_COLOR_TEXT"

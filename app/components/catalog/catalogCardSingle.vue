@@ -1,5 +1,6 @@
 <template>
-  <div class="cursor-pointer h-full bg-card hover:bg-foreground/80 hover:text-accent rounded-2xl card">
+  <div class="cursor-pointer h-full bg-card hover:bg-foreground/80 hover:text-accent rounded-2xl card ">
+
     <NuxtLink :to="`/catalog/${props.card.id}`">
         <div class="text-3xl py-5 text-price italic">
           <span v-if="!isRange(props.card.price)">
@@ -13,7 +14,7 @@
         <NuxtImg :src="props.card.img" class="h-[350px] object-cover mx-auto"/>
       </div>
       <div class="m-5">
-        <p class="font-bold border-muted-bottom pb-2 mb-2 rounded text-primary">
+        <p class="font-bold border-muted-bottom pb-2 mb-2 rounded">
           {{ props.card.name }}
         </p>
         <span v-for="cardInfoTitle in props.card?.info[0]?.data">
