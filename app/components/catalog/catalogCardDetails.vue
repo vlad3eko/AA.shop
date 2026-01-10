@@ -9,14 +9,14 @@
       <div class="text-left">
 
         <toggle-section title="Стоимость" v-model:is-unabled="toggleSectionEnabled">
-          <div class="font-bold text-center mb-5 mt-5 tracking-widest text-4xl text-price">
+          <div class="flex justify-center">
           <span v-if="!isRange(props.card.price)">
-                  {{ props.card.price }}
+                  <p class="text-5xl text-price tracking-[.25em]">{{ props.card.price }}</p>
                 </span>
-          <span v-else>
-                  {{ props.card.price[0] }} - {{ props.card.price[1] }}
+            <span v-else class="flex justify-end gap-2 items-center">
+                  <p class="text-price-sale tracking-[.15em]">{{ props.card.price[0] }}</p> / <p
+                class="text-5xl text-price tracking-[.15em]">{{ props.card.price[1] }}</p>
                 </span>
-          ₽
           </div>
         </toggle-section>
 
@@ -70,9 +70,15 @@
 import ToggleSection from "~/components/ui/ToggleSection.vue";
 import {isRange} from "~~/server/utils/hooks/range.price";
 
+
+
 const props = defineProps<{
   card: ICard
 }>()
+
+useSeoMeta({
+  title: `${props.card.name}`
+})
 
 const toggleSectionEnabled = ref<boolean>(false)
 
