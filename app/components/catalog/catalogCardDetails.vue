@@ -1,8 +1,8 @@
 <template>
-    <h1 class="p-2 sticky text-3xl font-bold text-primary bg-shell z-2 uppercase rounded-2xl top-13  select-text shadow-xl">
+    <h1 class="p-2 sticky text-3xl font-bold text-center text-primary bg-shell z-2 uppercase rounded-2xl top-13  select-text shadow-xl">
       {{ props.card.name }}</h1>
     <div class="grid lg:grid-cols-2 px-5">
-      <div class="flex items-center justify-center self-start lg:sticky lg:top-35 px-10 scale-x-[.85] scale-y-[.85]">
+      <div class="flex items-center justify-center self-start lg:sticky lg:top-35 px-10 scale-x-[.85] scale-y-[.85] animate-from-top">
         <NuxtImg :src="props.card.img" :alt="props.card.name"/>
       </div>
 
@@ -21,11 +21,11 @@
         </toggle-section>
 
         <toggle-section title="Описание">
-          <div v-for="infoCard in props.card.info" class="mb-5">
+          <div v-for="infoCard in props.card.info" :key="infoCard.title" class="mb-5">
             <p
                 class="text-3xl shadow-foreground shadow-2xs pb-2 text-center mb-5 rounded-2xl uppercase">
               {{ infoCard.title }} </p>
-            <div v-for="infoCardData in infoCard.data" class="mb-2">
+            <div v-for="infoCardData in infoCard.data" :key="infoCardData.title" class="mb-2">
               <p
                   class="inline font-bold">
                 {{ infoCardData.title }}
@@ -38,8 +38,8 @@
         </toggle-section>
 
         <toggle-section title="Презентация">
-          <div v-for="present in props.card.presentation">
-            <div v-for="presentData in present.data">
+          <div v-for="present in props.card.presentation" :key="present.title">
+            <div v-for="presentData in present.data" :key="presentData.title">
               <div v-if="presentData.title">
                 <div class="flex">
                   <p class="bg-yellow-500 pr-5 mr-2 rounded-3xl border border-white"></p>
