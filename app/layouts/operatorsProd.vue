@@ -4,18 +4,20 @@
       <div class="bg-background text-foreground">
         <div class="container mx-auto min-h-[100vh]">
           <div class="sticky top-0 z-10 w-full rounded-2xl">
-            <div class="flex justify-between items-center bg-background">
+            <div class="flex  items-center bg-background">
 
               <Menu class="uppercase text-3xl font-bold"/>
 
               <!-- TODO create component changeTheme add logic swap at hook -->
-              <span v-if="themeChanged"
-                    :class="MATERIAL_ICON_CLASS_COLOR_TEXT"
-                    class="cursor-pointer md-48 ">contrast</span>
-              <!--TODO create swap logo theme -->
-              <span v-else
-                    :class="MATERIAL_ICON_CLASS_COLOR_TEXT"
-                    class="cursor-pointer md-48 ">prayer_times</span>
+              <div>
+                <span v-if="themeChanged"
+                      :class="MATERIAL_ICON_CLASS_COLOR_TEXT"
+                      class="cursor-pointer md-36">contrast</span>
+                <!--TODO create swap logo theme -->
+                <span v-else
+                      :class="MATERIAL_ICON_CLASS_COLOR_TEXT"
+                      class="cursor-pointer md-48 ">prayer_times</span>
+              </div>
               <change-theme/>
               <div class="mx-5">
                 <basket/>
