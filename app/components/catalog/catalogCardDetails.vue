@@ -21,11 +21,11 @@
         </toggle-section>
 
         <toggle-section title="Описание">
-          <div v-for="infoCard in props.card.info" class="mb-5">
+          <div v-for="infoCard in props.card.info" :key="infoCard.title" class="mb-5">
             <p
                 class="text-3xl shadow-foreground shadow-2xs pb-2 text-center mb-5 rounded-2xl uppercase">
               {{ infoCard.title }} </p>
-            <div v-for="infoCardData in infoCard.data" class="mb-2">
+            <div v-for="infoCardData in infoCard.data" :key="infoCardData.title" class="mb-2">
               <p
                   class="inline font-bold">
                 {{ infoCardData.title }}
@@ -38,8 +38,8 @@
         </toggle-section>
 
         <toggle-section title="Презентация">
-          <div v-for="present in props.card.presentation">
-            <div v-for="presentData in present.data">
+          <div v-for="present in props.card.presentation" :key="present.title">
+            <div v-for="presentData in present.data" :key="presentData.title">
               <div v-if="presentData.title">
                 <div class="flex">
                   <p class="bg-yellow-500 pr-5 mr-2 rounded-3xl border border-white"></p>
