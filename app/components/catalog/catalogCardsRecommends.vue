@@ -43,7 +43,7 @@
 
 import {MATERIAL_ICON_CLASS_COLOR_TEXT} from "~~/server/utils/classes/material-icon.shortcut";
 import {isRange} from "~~/server/utils/hooks/range.price";
-import ToggleSection from "~/components/ui/ToggleSection.vue";
+import ToggleSection from "~/components/ui/ToggleSection";
 
 const {data: cards} = await useFetch('/api/catalog')
 
