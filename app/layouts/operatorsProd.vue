@@ -19,6 +19,6 @@
 
 <script lang="ts" setup>
 
-import ChangeTheme from "~/components/ui/ChangeTheme.vue";
+import ChangeTheme from "~/components/ui/ChangeTheme";
 
 </script>

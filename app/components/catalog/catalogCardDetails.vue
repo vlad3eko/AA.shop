@@ -67,7 +67,7 @@
 
 <script lang="ts" setup>
 
-import ToggleSection from "~/components/ui/ToggleSection.vue";
+import ToggleSection from "~/components/ui/ToggleSection";
 import {isRange} from "~~/server/utils/hooks/range.price";
 
 
