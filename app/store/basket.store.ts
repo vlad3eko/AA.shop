@@ -1,6 +1,7 @@
 import {defineStore} from 'pinia'
 import {useOrdersStore} from "~/store/orders.store";
 
+
 export const useBasketStore = defineStore('basket', {
     state: () => ({
         items: [] as BasketItem[],
@@ -65,14 +66,21 @@ export const useBasketStore = defineStore('basket', {
 
         },
 
-        clear() {
+        clearStore() {
             this.items = []
         },
 
         createOrder() {
             const orderList = useOrdersStore()
-            orderList.add([...this.items])
-            this.clear()
+
+            if (this.items.length) {
+                orderList.add([...this.items])
+                this.clearStore()
+            }
+        },
+
+        addClientInfo(date: any) {
+            console.log('date', date)
         }
     },
 })

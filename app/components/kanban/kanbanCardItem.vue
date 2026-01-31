@@ -42,7 +42,6 @@ import {titlesOrders} from "~~/server/utils/data.orders.card";
 import {useOrdersStore} from "~/store/orders.store";
 
 const ordersList = useOrdersStore()
-console.log('oL', ordersList.orders)
 
 </script>
 

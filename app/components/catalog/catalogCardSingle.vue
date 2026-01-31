@@ -8,7 +8,7 @@
       <div class="m-5">
         <div class="grid justify-items-stretch grid-cols-3 font-bold border-muted-bottom pb-2 mb-2 rounded">
           <div class="col-span-2 text-left text-2xl">
-            {{ props.card.name }}
+            {{ props.card.product }}
           </div>
           <div class="text-right col-start-3 self-center">
           <span v-if="!isRange(props.card.price)">
@@ -29,7 +29,7 @@
     </NuxtLink>
 
     <div
-        @click="addToBasket"
+        @click="basket.add(props.card)"
         class="button text-accent p-3 text-center uppercase tracking-[.25em] cursor-pointer">
       Добавить в корзину
     </div>
@@ -39,16 +39,12 @@
 <script lang="ts" setup>
 
 import {isRange} from "~~/server/utils/hooks/range.price";
-import {useBasketStore} from "~/store/bastet.store";
+import {useBasketStore} from "~/store/basket.store";
 
 const props = defineProps<{
   card: ICard
 }>()
 
 const basket = useBasketStore()
-
-const addToBasket = () => {
-  basket.add(props.card)
-}
 
 </script>

@@ -1,9 +1,10 @@
 export interface IOrder {
-    id: string
+    id: number
+    product: string[]
+    price: number | [number, number]
+    img?: string[]
     name: string
     address: string
-    product: string
-    price: number
     date: string
     delivery: string
     manager?: string

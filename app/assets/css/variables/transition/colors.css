@@ -8,6 +8,6 @@
     bg-primary hover:bg-background
     text-accent hover:text-accent-foreground
     hover:m-[-1px] hover:border hover:border-accent-foreground
-    rounded-2xl
-    transition-colors duration-400 ease-in
+    rounded-xl
+    transition-colors duration-200 ease-in
 }
