@@ -74,17 +74,20 @@
         </SheetHeader>
         <sheet-footer>
           <sheet-title>
+
             <div class="flex justify-between text-[16px] mb-5">
+
               <p>Сумма заказа:</p>
               <p>{{ basket.totalPrice }} ₽</p>
             </div>
           </sheet-title>
           <sheet-description>
+            <dialog-info-client>
             <div
-                @click="basket.createOrder"
                 class="button text-accent p-3 text-center uppercase tracking-[.25em] cursor-pointer">
-              Оформить заказ
+              Продолжить
             </div>
+            </dialog-info-client>
           </sheet-description>
         </sheet-footer>
       </SheetContent>
@@ -104,8 +107,10 @@ import {
 
 import {SheetFooter} from "~/components/ui/sheet";
 import {MATERIAL_ICON_CLASS_COLOR_TEXT} from "~~/server/utils/classes/material-icon.shortcut";
-import {useBasketStore} from "~/store/bastet.store";
+import {useBasketStore} from "~/store/basket.store";
 import {isRange} from "~~/server/utils/hooks/range.price";
+import {Dialog} from "~/components/ui/dialog";
+import DialogInfoClient from "~/components/basket/dialogInfoClient.vue";
 
 const basket = useBasketStore()
 

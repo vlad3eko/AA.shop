@@ -1,3 +1,5 @@
+import {IOrderClientInfo} from "~~/server/utils/orders.card.types";
+
 export interface ICardDescriptionItem {
     title?: string
     description?: string
@@ -24,8 +26,7 @@ export interface ICard {
     presentation: ICardDescription[]
 }
 
-
 export interface BasketItem {
-    card: ICard,
+    card: ICard
     quantity: number
 }

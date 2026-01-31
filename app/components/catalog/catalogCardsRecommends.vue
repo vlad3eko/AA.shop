@@ -24,7 +24,7 @@
               <NuxtImg :src="recommendCard.img"
                        class="max-h-[120px] mx-auto"/>
               <span class="text-muted-foreground text-response">
-              {{ recommendCard.name }}</span>
+              {{ recommendCard.product }}</span>
             </div>
           </NuxtLink>
         </swiper-slide>
@@ -43,7 +43,6 @@
 
 import {MATERIAL_ICON_CLASS_COLOR_TEXT} from "~~/server/utils/classes/material-icon.shortcut";
 import {isRange} from "~~/server/utils/hooks/range.price";
-import ToggleSection from "~/components/ui/ToggleSection";
 
 const {data: cards} = await useFetch('/api/catalog')
 

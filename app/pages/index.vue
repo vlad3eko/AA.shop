@@ -36,7 +36,7 @@ const filteredCatalogs = computed(() => {
     return cards.value
   } else if (searchCards.value) {
     return cards.value?.filter(card =>
-        card.name.toLowerCase().includes(searchCards.value.toLowerCase())
+        card.product.toLowerCase().includes(searchCards.value.toLowerCase())
     )
   } else if (selectedCategory.value) {
     return cards.value?.filter(card =>
