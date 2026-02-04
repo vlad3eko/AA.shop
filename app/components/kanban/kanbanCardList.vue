@@ -1,6 +1,6 @@
 <template>
   <div class="bg-background border rounded-2xl border-border p-5 w-full">
-    <div class="grid grid-cols-17 text-center bg-panel rounded-2xl mb-5">
+    <div class="grid grid-cols-17 text-center bg-panel rounded-2xl mb-5 ">
       <div
           v-for="col in titlesOrders"
           :key="col.key"
@@ -17,7 +17,8 @@
     </div>
     <div v-else class="rounded-b-2xl">
       <div v-for="(order, orderIndex) in ordersList.orders" :key="orderIndex"
-           class="border-border border mb-2 grid grid-cols-17 truncate-wrapper">
+           draggable="true"
+           class="border-border border mb-2 grid grid-cols-17 truncate-wrapper hover:bg-panel cursor-pointer drag">
         <kanban-card-item :order="order"/>
       </div>
     </div>
@@ -33,5 +34,10 @@ const ordersList = useOrdersStore()
 </script>
 
 <style scoped>
-
+.drag {
+  cursor: grab;
+  &:active {
+    cursor: grabbing
+  }
+}
 </style>
