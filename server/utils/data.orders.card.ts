@@ -13,12 +13,12 @@
 
 
 export const titlesOrders = [
-    {key: 'name', label: 'ФИО', col: 'col-span-2'},
-    {key: 'address', label: 'Адрес', col: 'col-span-3'},
-    {key: 'product', label: 'Товар', col: 'col-span-1'},
+    {key: 'name', label: 'ФИО', col: 'col-span-3'},
+    {key: 'address', label: 'Адрес', col: 'col-span-4'},
+    {key: 'product', label: 'Товар', col: 'col-span-5'},
     {key: 'price', label: 'Цена', col: 'col-span-1'},
-    {key: 'date', label: 'Дата заказа', col: 'col-span-1'},
+    {key: 'date', label: 'Дата доставки', col: 'col-span-1'},
     {key: 'delivery', label: 'Доставка', col: 'col-span-1'},
-    {key: 'manager', label: 'Доставка', col: 'col-span-1'},
+    {key: 'manager', label: 'Оформил', col: 'col-span-1'},
     {key: '$createdAt', label: 'Создан', col: 'col-span-1'},
 ]

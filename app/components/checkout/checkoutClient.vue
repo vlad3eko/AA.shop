@@ -18,12 +18,12 @@
         <div class="flex flex-col gap-2">
           <p>Способ доставки:</p>
           <div>
-            <input v-model="form.delivery" type="radio" id="currier" name="deliveryVariant" value="Курьерская служба"
+            <input v-model="form.delivery" type="radio" id="currier" name="deliveryVariant" value="Курьер"
                    class="mr-2 cursor-pointer" checked/>
             <label for="currier" class="cursor-pointer">Курьерская служба</label>
           </div>
           <div class="mb-5">
-            <input v-model="form.delivery" type="radio" id="takeSelf" name="deliveryVariant" value="Пункт самовывоза"
+            <input v-model="form.delivery" type="radio" id="takeSelf" name="deliveryVariant" value="ПВЗ"
                    class="mr-2 cursor-pointer">
             <label for="takeSelf" class="cursor-pointer">Пункт самовывоза</label>
           </div>

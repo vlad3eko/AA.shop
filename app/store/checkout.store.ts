@@ -8,7 +8,7 @@ export const useCheckoutStore = defineStore('checkout', () => {
     const checkout = ref({
         name: '',
         address: '',
-        delivery: 'Курьерская служба',
+        delivery: 'Курьер',
         date: ''
     } as ICheckout)
 
