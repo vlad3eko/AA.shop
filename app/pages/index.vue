@@ -1,5 +1,5 @@
 <template>
-  <div class="font-bold rounded-2xl bg-shell flex justify-center items-center sticky top-13 left-50 select-none">
+  <div class="font-bold rounded-2xl bg-shell flex justify-center items-center sticky top-12 left-50 select-none">
     <catalog-sort v-model="searchCards" v-model:category="selectedCategory" :categories="arrayCategories"
                   :cards="filteredCatalogs"/>
     <div v-show="searchCards || selectedCategory" @click="resetControls" class="rounded-2xl cursor-pointer border flex h-full p-2 ml-2 font-bold uppercase tracking-widest transition-colors">

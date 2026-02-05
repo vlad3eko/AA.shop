@@ -28,6 +28,16 @@
             <label for="takeSelf" class="cursor-pointer">Пункт самовывоза</label>
           </div>
         </div>
+        <p>Дата доставки:</p>
+        <div>
+          <div class="mb-5">
+            <input type="checkbox" id="soonAsPossible" name="soonAsPossible" value="Ближайшая"
+                   class="mr-2 cursor-pointer" checked>
+            <label for="soonAsPossible" class="cursor-pointer">Ближайшая</label>
+          </div>
+          <input v-model="form.date" type="date"
+                 class="mr-2 cursor-pointer">
+        </div>
         <DialogFooter>
           <DialogClose asChild>
             <Button variant="ghost">Отмена</Button>
@@ -53,23 +63,21 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "~/components/ui/dialog"
-import {useBasketStore} from "~/store/basket.store";
 import {Button} from "~/components/ui/button";
 import {Input} from "~/components/ui/input";
-import {useTemplateRef} from "vue";
 import {useCheckoutStore} from "~/store/checkout.store";
+import {NativeSelect, NativeSelectOption} from "~/components/ui/native-select";
 
-const basketStore = useBasketStore()
 const checkoutStore = useCheckoutStore()
 
 const form = reactive({
   name: '',
   address: '',
   delivery: checkoutStore.checkout.delivery,
-  date: new Date().toISOString()
+  date: checkoutStore.checkout.date
 })
 
-
+console.log('form', form.date)
 
 </script>
 

@@ -9,7 +9,7 @@ export const useCheckoutStore = defineStore('checkout', () => {
         name: '',
         address: '',
         delivery: 'Курьер',
-        date: ''
+        date: 'Ближайшая'
     } as ICheckout)
 
     function createOrder(date: ICheckout) {
@@ -26,6 +26,16 @@ export const useCheckoutStore = defineStore('checkout', () => {
         })
 
         basketStore.clearStore()
+        clearStore()
+    }
+
+    function clearStore() {
+        checkout.value = {
+            name: '',
+            address: '',
+            delivery: 'Курьер',
+            date: 'Ближайшая'
+        }
     }
 
     return {
