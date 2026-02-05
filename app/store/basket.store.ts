@@ -69,6 +69,7 @@ export const useBasketStore = defineStore('basket', () => {
         add,
         increment,
         decrement,
+        removeCard,
         clearStore,
     }
 })

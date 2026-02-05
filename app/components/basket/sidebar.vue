@@ -38,7 +38,7 @@
                 <span
                     :class="MATERIAL_ICON_CLASS_COLOR_TEXT"
                     class="col-start-6 text-right cursor-pointer"
-                    @click="basket.remove(item.card.id)"
+                    @click="basket.removeCard(item.card.id)"
                 >
                  delete
                 </span>
